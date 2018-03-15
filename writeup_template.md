@@ -31,10 +31,11 @@ To train the Model I used generator to pass the data in batches. I used 20% of t
 I decided to use below window sizes and positions.
 |   Window|  Overlapping| Y Start| X Start |
 |--:	|---	|---	|---	|
-|  64,64 	| .6  	|   400, 600 	|  	|
-|  96,96 	| .6  	| 400, 600 	|   	|
-|  128,96 	| .6  	| 400, None  	|   	|
+|  64,64 	| .6  	|   400, 600 	| 600, None 	|
+|  96,96 	| .6  	| 400, 600 	|   600, None	|
+|  128,96 	| .6  	| 400, None  	|600, None   	|
 
+X_start_stop was used from 600 to reduce the compute time. As it was taking very much time to run on pipeline with all the windows. See the dicussion for more details.
 
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
@@ -74,5 +75,5 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The reason why Hog and SVC was not used for the final input is because of the False Positives which were produced by the LinearSVM classifier. Even after multiple tuning of parameters the output videos were not satisfacotry. These results can be seen in *Failed Results SVC* directory. Even after augmenting the data results were not good on image. Also it was very time consuming to generate the Videos as the  number of windows was 550, so reduce this as suggested by our Session Lead we applied the windows to the lower right part of the image.
 
