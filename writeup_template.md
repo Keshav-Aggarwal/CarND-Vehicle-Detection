@@ -44,7 +44,7 @@ X_start_stop was used from 600 to reduce the compute time. As it was taking very
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Below are the test images used for checking the prediction of the model.
+As SVC was not working as per expectation I decided to switch the classifier to CNN. To improve the performance of the classifier I tried with different parameters and CNN layers .Below are the test images used for checking the prediction of the model.
 
 ![png](output_images/Result1.png)
 ![png](output_images/Result2.png)
