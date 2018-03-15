@@ -16,7 +16,7 @@ As CNN works well with more data we need more data. So I decided to augment the 
 
 #### Model Architecture
 Model used has below architecture:-
-[(Keras_Saved_Models/Model.PNG)]
+![png](Keras_Saved_Models/Model.PNG)
 
 #### Training Model
 To train the Model I used generator to pass the data in batches. I used 20% of the data as test data.Then the model was saved so that we can use it for predicting the sliding windows.
@@ -42,7 +42,7 @@ X_start_stop was used from 600 to reduce the compute time. As it was taking very
 
 Below are the test images used for checking the prediction of the model.
 
-![alt text][image4]
+![png][image4]
 ---
 
 ### Video Implementation
