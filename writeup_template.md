@@ -10,9 +10,12 @@ I used Convolution Neural Network and trained it with the Vehicle and Non-vehicl
 
 #### Data Augmentation
 As CNN works well with more data we need more data. So I decided to augment the data bu flipping it, as flipping the images will just double the data. While horizontal flipping was applied to car and non-car images, vertical flipping can not be applied to car images as this not retain any information. So I decided to vertically flip the non-car images. Thus making the total size of data as below:-
-    Number of total Vehicle Images 17584
-    Number of total non Vehicle Images 26904
-    Number of total Input Data 44488
+
+Number of total Vehicle Images: 17584
+
+Number of total non Vehicle Images: 26904
+
+Number of total Input Data: 44488
 
 #### Model Architecture
 Model used has below architecture:-
@@ -63,17 +66,17 @@ I recorded the positions of positive detections in each frame of the video.  Fro
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
-### Here are six frames and their corresponding heatmaps:
-
-![alt text][image5]
-
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-![alt text][image6]
-
-### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image7]
+![png](output_images/LastFrame.png)
 
 
+### Here are six frames and their corresponding heatmaps and bounding boxes:
+
+![png](output_images/Result1.png)
+![png](output_images/Result2.png)
+![png](output_images/Result3.png)
+![png](output_images/Result4.png)
+![png](output_images/Result5.png)
+![png](output_images/Result6.png)
 
 ---
 
