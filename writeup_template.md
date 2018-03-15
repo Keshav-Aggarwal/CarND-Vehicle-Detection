@@ -10,9 +10,12 @@ I used Convolution Neural Network and trained it with the Vehicle and Non-vehicl
 
 #### Data Augmentation
 As CNN works well with more data we need more data. So I decided to augment the data bu flipping it, as flipping the images will just double the data. While horizontal flipping was applied to car and non-car images, vertical flipping can not be applied to car images as this not retain any information. So I decided to vertically flip the non-car images. Thus making the total size of data as below:-
-    Number of total Vehicle Images 17584
-    Number of total non Vehicle Images 26904
-    Number of total Input Data 44488
+
+Number of total Vehicle Images: 17584
+
+Number of total non Vehicle Images: 26904
+
+Number of total Input Data: 44488
 
 #### Model Architecture
 Model used has below architecture:-
