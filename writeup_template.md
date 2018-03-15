@@ -29,7 +29,8 @@ To train the Model I used generator to pass the data in batches. I used 20% of t
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
 I decided to use below window sizes and positions.
-|   Window|  Overlapping| Y Start| X Start |
+
+|Window|Overlapping|Y Start|X Start |
 |--:	|---	|---	|---	|
 |  64,64 	| .6  	|   400, 600 	| 600, None 	|
 |  96,96 	| .6  	| 400, 600 	|   600, None	|
@@ -53,7 +54,7 @@ Below are the test images used for checking the prediction of the model.
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./Project_Output.mp4)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
