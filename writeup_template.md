@@ -20,7 +20,7 @@ Model used has below architecture:-
 
 #### Training Model
 To train the Model I used generator to pass the data in batches. I used 20% of the data as test data.Then the model was saved so that we can use it for predicting the sliding windows.
-[(Keras_Saved_Models/Training.PNG)]
+![png](Keras_Saved_Models/Training.PNG)
 
 
 
@@ -42,7 +42,12 @@ X_start_stop was used from 600 to reduce the compute time. As it was taking very
 
 Below are the test images used for checking the prediction of the model.
 
-![png][image4]
+![png](output_images/Result1.png)
+![png](output_images/Result2.png)
+![png](output_images/Result3.png)
+![png](output_images/Result4.png)
+![png](output_images/Result5.png)
+![png](output_images/Result6.png)
 ---
 
 ### Video Implementation
