@@ -6,7 +6,7 @@ In this project, your goal is to write a software pipeline to detect vehicles in
 
 ## Classification Model Used: CNN
 The classifier used for this project is created Using CNN. I tried with the methods suggested by Udacity but they didn't worked out very well. Please see the discussion section for more information on this. 
-I used Convolution Neural Network and trained it with the Vehicle and Non-vehicle data provided by Udacity. Code for the Model is in Model.ipynb.
+I used Convolution Neural Network and trained it with the Vehicle and Non-vehicle data provided by Udacity. Code for the Model is in **Model.ipynb**.
 
 #### Data Augmentation
 As CNN works well with more data we need more data. So I decided to augment the data bu flipping it, as flipping the images will just double the data. While horizontal flipping was applied to car and non-car images, vertical flipping can not be applied to car images as this not retain any information. So I decided to vertically flip the non-car images. Thus making the total size of data as below:-
@@ -39,7 +39,9 @@ I decided to use below window sizes and positions.
 |  96,96 	| .6  	| 400, 600 	|   600, None	|
 |  128,96 	| .6  	| 400, None  	|600, None   	|
 
-X_start_stop was used from 600 to reduce the compute time. As it was taking very much time to run on pipeline with all the windows. See the dicussion for more details.
+X_start_stop was used from 600 to reduce the compute time. As it was taking very much time to run on pipeline with all the windows. See the dicussion for more details for this.
+
+We have taken window of 128*96 instead of 128*128 as height of the car will be always less than the width. This is not applicable for the smaller window sizes as they are trying to detect the cars which are farther.
 
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
@@ -62,7 +64,7 @@ Here's a [link to my video result](./Project_Output.mp4)
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
-I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
+I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a list which will contrain the details of past 20 images, then adding these images and using them for more robust car detection. I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
@@ -84,5 +86,5 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-The reason why Hog and SVC was not used for the final input is because of the False Positives which were produced by the LinearSVM classifier. Even after multiple tuning of parameters the output videos were not satisfacotry. These results can be seen in *Failed Results SVC* directory. Even after augmenting the data results were not good on image. Also it was very time consuming to generate the Videos as the  number of windows was 550, so reduce this as suggested by our Session Lead we applied the windows to the lower right part of the image.
+The reason why Hog and SVC method was not used for the final input is because of the False Positives which were produced by the LinearSVM classifier. Even after multiple tuning of parameters the output videos were not satisfacotry. These results can be seen in *Failed Results SVC* directory. Even after augmenting the data results were not good on image. Also it was very time consuming to generate the Videos as the  number of windows was 550, so reduce this as suggested by our Session Lead we applied the windows to the lower right part of the image.
 
